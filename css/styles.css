@@ -1,0 +1,181 @@
+body {
+			background: #000;
+		}
+		h1 {
+			position: relative;
+			margin: 200px auto 0;
+			color: #eee;
+			width: 640px;
+			font-family: 'Encode Sans Semi Expanded', sans-serif;
+			font-size: 5em;
+			font-weight: bold;
+			text-align: center;
+			animation-name: move;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;
+		}
+		div {
+			color: #eee;
+			font-family: 'Encode Sans Semi Expanded', sans-serif;
+			font-size: 2em;
+			text-align: center;
+			margin-top: 32px;
+			font-weight: 100;
+		}
+		@keyframes move {
+			50% {
+				transform-origin: 10% 0 0;
+			}
+			100%{
+				transform: translate(14%, 0);
+			}
+		}
+		span1 {
+			opacity: 0.8;
+		}
+		h1 > span {
+			color: #303F9F;
+		}
+		@keyframes beatK {
+			16.66% {
+				opacity: .5;
+			}
+		}
+		@keyframes beatU {
+			33.33% {
+				opacity: .5;
+			}
+		}
+		@keyframes beatS {
+			66.66% {
+				opacity: .5;
+			}
+		}
+		@keyframes beatH {
+			83.33% {
+				opacity: .5;
+			}
+		}
+		letterK {
+			opacity: 1;
+			animation-name: beatK;
+			animation-duration: 3.2s;
+			animation-iteration-count: forwards;
+		}
+		letterU {
+			opacity: 1;
+			animation-name: beatU;
+			animation-duration: 3.2s;
+			animation-iteration-count: forwards;
+		}
+		letterS {
+			opacity: 1;
+			animation-name: beatS;
+			animation-duration: 3.2s;
+			animation-iteration-count: forwards;
+		}
+		letterH {
+			opacity: 1;
+			animation-name: beatH;
+			animation-duration: 3.2s;
+			animation-iteration-count: forwards;
+		}
+		agra {
+			animation-name: fade;
+			animation-duration: 2.6s;
+			animation-fill-mode: forwards;
+		}
+		@keyframes fade {
+			66.66% {
+				opacity: 1;
+			}
+			83.33% {
+				opacity: 0.5;
+			}
+			100% {
+				opacity: .05;
+			}
+		}
+
+		span:hover letterK letterU letterS letterH {
+			opacity: 1;
+		}
+		
+		a {	
+			color: #eee;
+		    text-decoration: none;
+		}
+		a:hover {
+			color: #303F9F;
+		}
+		
+
+		.heart {
+		    margin: 100px auto;
+		    background-color: #303F9F;
+		    height: 50px;
+		    width: 50px;
+		    transform: rotate(-45deg);
+		    animation-name: beat;
+		    animation-duration: 1s;
+		    animation-iteration-count: infinite;
+		    opacity: 0.25;
+		  }
+		  .heart:after {
+		    background-color: #303F9F;
+		    content: "";
+		    border-radius: 50%;
+		    position: absolute;
+		    width: 50px;
+		    height: 50px;
+		    top: 0px;
+		    left: 25px;
+		  }
+		  .heart:before {
+		    background-color: #303F9F;
+		    content: "";
+		    border-radius: 50%;
+		    position: absolute;
+		    width: 50px;
+		    height: 50px;
+		    top: -25px;
+		    left: 0px;
+		  }
+		  @keyframes beat {
+		    0% {
+		    	transform: scale(1) rotate(-45deg);
+		    	opacity: 0.25;
+		    }
+		    30% {
+		    	transform: scale(1) rotate(-45deg);
+		    	opacity: 0.25;
+		    }
+		    40% {
+		      	transform: scale(1.15) rotate(-45deg);
+		      	opacity: 1;
+		    }
+		    50% {
+		    	transform: scale(1) rotate(-45deg);
+		    	opacity: 0.25;
+		    }
+		    60% {
+		    	transform: scale(1.1) rotate(-45deg);
+		    	opacity: 1;
+		    }
+		    70% {
+		    	transform: scale(1) rotate(-45deg);
+		    	opacity: 0.25;
+		    }
+		    100% {
+		    	transform: scale(1) rotate(-45deg);
+		    	opacity: 0.25
+		    }
+		  }
+
+		@media(max-width: 640px) {
+			h1 {
+				font-size: 3.5em;
+				width: 400px;
+			}
+		}
+		
