@@ -8,6 +8,7 @@ h1 {
 	font-weight: 700;
 	font-size: 5em;
 	margin-bottom: 50px;
+	user-select: none;
 }
 p.intro {
 	font-weight: 700;
@@ -23,64 +24,47 @@ p.intro {
 }
 .intro-text p {
 	font-size: 2rem;
+	user-select: none;
 }
 #name {
 	font-size: 1.1em;
 	color: black;
-	text-shadow: 2px 5px 10px #4527A0, -2px -5px 5px #4527A0;
+	text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2;
 }
-#name:hover {
-	animation-name: name-rainbow;
-	animation-duration: 6.4s;
-	animation-iteration-count: infinite;
-}
-@keyframes name-rainbow {
-	0% {text-shadow: 2px 5px 10px #4527A0,-2px -5px 5px #4527A0}
-	25% {text-shadow: 2px 5px 10px red, -2px -5px 5px red}
-	50% {text-shadow: 2px 5px 10px yellow, -2px -5px 5px yellow}
-	75% {text-shadow: 2px 5px 10px green, -2px -5px 5px green}
-	100% {text-shadow: 2px 5px 10px #4527A0, -2px -5px 5px #4527A0}
-}
+
 
 .links img{
 	/*background-color: #666;*/
-	display: block;
-	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	align-items: center;
-	opacity: 0.5;
+	opacity: 0.8;
 }
 .container-fluid {
-	position: relative;
 	background-color: #7E57C2;
 
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 	
-	box-shadow: 0 10px 20px #311B92 inset;
+	box-shadow: 0 10px 20px #311B92 inset, 0px 10px 60px #7E57C2 ;
 	overflow: hidden;
 }
 .container-fluid:hover {
 	max-height: 500px;
-	transition: max-height 2s linear;
-	/*animation-name: expand;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;*/
+	transition: max-height 4s ease;
 }
-/*@keyframes expand {
-	from {height: 20px;}
-	to { height: auto; }
-} */
 
 #spotify-link, #github-link {
 	border-radius:100px;
-	margin-top: 10px;
+	margin-top: 20px;
 }
+
 .links img:hover {
-	animation-name: fill-color;
+	animation-name: link-hover;
 	animation-duration: .3s;
 	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(.39,0,.39,1.27);
 }
-@keyframes fill-color {
+@keyframes link-hover {
 	100% {
 		opacity: 1;
 		box-shadow: 0 10px 20px #311B92;
@@ -91,7 +75,27 @@ p.intro {
 @media(min-width: 577px) {
 	.container-fluid {
 		max-height: 3px;
-		transition: max-height 4s;
+		transition: max-height 10s ease-in-out;
+	}
+	#name {
+		animation-name: reverse-glow;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes reverse-glow {
+		0% {text-shadow: 0px 15px 1660px blue, 0px -15px 1660px blue;
+			color: white;}
+		100% { text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2; }
+	}
+	#name:hover {
+		animation-name: glow;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes glow {
+		100% {text-shadow: 0px 15px 1660px blue, 0px -15px 1660px blue;
+				color: white;}
+		/*100% {text-shadow: 2px 5px 30px #4527A0, -2px -5px 30px #4527A0}*/
 	}
 }
 @media(max-width: 576px){
@@ -100,8 +104,7 @@ p.intro {
 		box-shadow: 0 10px 20px #311B92;
 	}
 	.container-fluid {
-		animation-name: expand;
-		animation-duration: 1s;
-		animation-fill-mode: forwards;
+		height: auto;
+		padding: 10px;
 	}
 }
