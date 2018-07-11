@@ -50,12 +50,27 @@ p.intro {
 	opacity: 0.5;
 }
 .container-fluid {
+	position: relative;
 	background-color: #7E57C2;
-	height: auto;
-	padding: 10px;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
 	box-shadow: 0 10px 20px #311B92 inset;
 	overflow: hidden;
 }
+.container-fluid:hover {
+	max-height: 500px;
+	transition: max-height 2s linear;
+	/*animation-name: expand;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;*/
+}
+/*@keyframes expand {
+	from {height: 20px;}
+	to { height: auto; }
+} */
+
 #spotify-link, #github-link {
 	border-radius:100px;
 	margin-top: 10px;
@@ -72,9 +87,21 @@ p.intro {
 		transform: scale(1.1);
 	}
 }
+
+@media(min-width: 577px) {
+	.container-fluid {
+		max-height: 3px;
+		transition: max-height 4s;
+	}
+}
 @media(max-width: 576px){
 	.links img {
 		opacity: 1;
 		box-shadow: 0 10px 20px #311B92;
+	}
+	.container-fluid {
+		animation-name: expand;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
 	}
 }
