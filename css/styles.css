@@ -35,18 +35,21 @@ p.intro {
 
 .links img{
 	/*background-color: #666;*/
+	display: block;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	margin-left: auto;
+    margin-right: auto;
 	align-items: center;
 	opacity: 0.8;
 }
 .container-fluid {
 	background-color: #7E57C2;
-
 	padding: 10px;
-	
 	box-shadow: 0 10px 20px #311B92 inset, 0px 10px 60px #7E57C2 ;
 	overflow: hidden;
+	max-height: 3px;
+	transition: max-height 4s ease-in-out;
 }
 .container-fluid:hover {
 	max-height: 500px;
@@ -75,7 +78,11 @@ p.intro {
 @media(min-width: 577px) {
 	.container-fluid {
 		max-height: 3px;
-		transition: max-height 10s ease-in-out;
+		transition: max-height 4s ease-in-out;
+	}
+	.container-fluid:hover {
+		max-height: 500px;
+		transition: max-height 4s ease;
 	}
 	#name {
 		animation-name: reverse-glow;
@@ -83,7 +90,7 @@ p.intro {
 		animation-fill-mode: forwards;
 	}
 	@keyframes reverse-glow {
-		0% {text-shadow: 0px 15px 1660px blue, 0px -15px 1660px blue;
+		0% {text-shadow: 0px 15px 1660px blue, 0px -15px 2000px blue;
 			color: white;}
 		100% { text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2; }
 	}
@@ -93,12 +100,14 @@ p.intro {
 		animation-fill-mode: forwards;
 	}
 	@keyframes glow {
-		100% {text-shadow: 0px 15px 1660px blue, 0px -15px 1660px blue;
+		100% {text-shadow: 0px 15px 1660px blue, 0px -15px 2000px blue;
 				color: white;}
-		/*100% {text-shadow: 2px 5px 30px #4527A0, -2px -5px 30px #4527A0}*/
 	}
 }
 @media(max-width: 576px){
+	h1 {
+		font-size: 3.5em;
+	}
 	.links img {
 		opacity: 1;
 		box-shadow: 0 10px 20px #311B92;
