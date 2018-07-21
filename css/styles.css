@@ -28,8 +28,8 @@ p.intro {
 }
 #name {
 	font-size: 1.1em;
-	color: black;
-	text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2;
+	color: #7E57C2;
+	/*text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2;*/
 }
 
 
@@ -90,18 +90,18 @@ p.intro {
 		animation-fill-mode: forwards;
 	}
 	@keyframes reverse-glow {
-		0% {text-shadow: 0px 15px 1660px blue, 0px -15px 2000px blue;
-			color: white;}
-		100% { text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2; }
+		0% {text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2;
+			color: black}
+		100% { color: #7E57C2; }
 	}
 	#name:hover {
 		animation-name: glow;
-		animation-duration: 1s;
+		animation-duration: .5s;
 		animation-fill-mode: forwards;
 	}
 	@keyframes glow {
-		100% {text-shadow: 0px 15px 1660px blue, 0px -15px 2000px blue;
-				color: white;}
+		100% {text-shadow: 0 5px 30px #7E57C2, 0 -5px 30px #7E57C2;
+			color: black}
 	}
 }
 @media(max-width: 576px){
